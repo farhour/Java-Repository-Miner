@@ -1,6 +1,7 @@
 import sys
 from pydriller import RepositoryMining
 import csv
+from functions import remove_duplicate_commits
 
 countOfArgs = len(sys.argv)
 pathToRepo = None
@@ -18,3 +19,4 @@ for commit in RepositoryMining(pathToRepo, only_modifications_with_file_types=['
 with open('output/changes.csv', 'w') as myFile:
     wr = csv.writer(myFile)
     wr.writerows(changes)
+listOfCommitsToIterate = remove_duplicate_commits(changes)
