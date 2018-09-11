@@ -20,3 +20,12 @@ with open('output/changes.csv', 'w') as myFile:
     wr = csv.writer(myFile)
     wr.writerows(changes)
 listOfCommitsToIterate = remove_duplicate_commits(changes)
+with open('output/inputForSpoon.csv', 'w') as myFile:
+    commitsCount = len(listOfCommitsToIterate)
+    position = 1
+    for key, value in listOfCommitsToIterate.items():
+        if position != commitsCount:
+            myFile.write(key + "," + ",".join(value) + "\n")
+        else:
+            myFile.write(key + "," + ",".join(value))
+        position += 1
