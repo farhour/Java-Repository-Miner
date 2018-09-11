@@ -2,6 +2,7 @@ import sys
 from pydriller import RepositoryMining
 import csv
 from functions import remove_duplicate_commits
+import subprocess
 
 countOfArgs = len(sys.argv)
 pathToRepo = None
@@ -32,3 +33,4 @@ with open('output/inputForSpoon.csv', 'w') as myFile:
         else:
             myFile.write(key + "," + ",".join(value))
         position += 1
+subprocess.call('./javaListMethods.groovy')
