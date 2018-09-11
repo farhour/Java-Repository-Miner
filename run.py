@@ -1,7 +1,7 @@
 import sys
 from pydriller import RepositoryMining
 import csv
-from functions import remove_duplicate_commits
+from functions import remove_duplicate_commits, dictionary_of_spoon_output
 import subprocess
 
 countOfArgs = len(sys.argv)
@@ -34,3 +34,7 @@ with open('output/inputForSpoon.csv', 'w') as myFile:
             myFile.write(key + "," + ",".join(value))
         position += 1
 subprocess.call('./javaListMethods.groovy')
+with open('output/outputOfSpoon.csv', 'r') as myFile:
+    reader = csv.reader(myFile, delimiter='|')
+    spoonOutput = list(reader)
+dictOfSpoonOutput = dictionary_of_spoon_output(spoonOutput)
