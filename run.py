@@ -38,3 +38,20 @@ with open('output/outputOfSpoon.csv', 'r') as myFile:
     reader = csv.reader(myFile, delimiter='|')
     spoonOutput = list(reader)
 dictOfSpoonOutput = dictionary_of_spoon_output(spoonOutput)
+result = list()
+for change in changes:
+    oldCommitHash = change[0]
+    newCommitHash = change[2]
+    oldFilePath = change[1]
+    newFilePath = change[3]
+    commonMethods = [method for method in dictOfSpoonOutput[oldCommitHash][oldFilePath] if method in
+                     dictOfSpoonOutput[newCommitHash][newFilePath]]
+    for method in commonMethods:
+        if dictOfSpoonOutput[oldCommitHash][oldFilePath][method] != \
+                dictOfSpoonOutput[newCommitHash][newFilePath][method]:
+            oldSignature = method+'#'+dictOfSpoonOutput[oldCommitHash][oldFilePath][method]
+            newSignature = method+'#'+dictOfSpoonOutput[newCommitHash][newFilePath][method]
+            result.append([newCommitHash, newFilePath, oldSignature, newSignature])
+with open('output/finalReport.csv', 'w') as myFile:
+    wr = csv.writer(myFile, delimiter='|')
+    wr.writerows(result)
