@@ -1,14 +1,15 @@
-<a href="https://github.com/farhour/Java-Sample-Repository" target="_blank"><img src="http://blog.inf.ed.ac.uk/sapm/files/2014/02/img.jpg" title="Java Repository Miner" alt="Java Repository Miner"></a>
+<a href="https://github.com/farhour/Java-Sample-Repository" target="_blank"><img src="https://farhour.com/img/github/Java-Repository-Miner.jpg" title="Java Repository Miner" alt="Java Repository Miner"></a>
 
 # Coding Task 1 - Java Repository Miner
 
-This repository is mostly an **academic exercise**. This code solves the problem of finding all modified signatures of Java methods in a given repository. This code uses [PyDriller](https://github.com/ishepard/pydriller) package to traverse all the commits in a repository and find ones with at least one modified file with Java extension. By traversing the commits through Git and using the [Spoon](https://github.com/INRIA/spoon) library, all signatures of modified Java files are made for analyzing in the final step. The full explanation of the problem can be found in `TASK.md` in this repo. For more details about the code, see the [FAQ](#faq) section.
+This repository is mostly an **academic exercise**. This code solves the problem of finding all modified signatures of Java methods in a given repository. This code uses [PyDriller](https://github.com/ishepard/pydriller) package to traverse all the commits in a repository and find ones with at least one modified file with Java extension. By traversing the commits through Git and using the [Spoon](https://github.com/INRIA/spoon) library, all signatures of modified Java files are made for analyzing in the final step. The full explanation of the problem can be found in `TASK.md` in this repo. For more details about the code, see the [FAQ](#faq) section. The results of running this miner on three GitHub repositories are in the `results` directory. For more details about each tested repository, see `NOTES.md` file located in each one.
 
 ---
 
 ## Table of Contents
 
 - [Example](#example)
+- [Results](#results)
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Usage](#usage)
@@ -24,6 +25,12 @@ This repository is mostly an **academic exercise**. This code solves the problem
 
 Assume that you have a method `test(int x)` in a Java file. If a commit changes this method to be `test(int x, int y)` then this commit adds a parameter to this method.
 The report should be a `CSV` file with columns  `"Commit's hash, Path of Java file, Old method signature, New method signature"`.
+
+---
+
+## Results
+
+The results of running this miner on three GitHub repositories are in the `results` directory. **For more details about each repository, see `NOTES.md` file located in each one.**
 
 ---
 
