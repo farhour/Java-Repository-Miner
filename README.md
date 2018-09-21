@@ -1,4 +1,4 @@
-<a href="https://github.com/farhour/Java-Sample-Repository" target="_blank"><img src="https://farhour.com/img/github/Java-Repository-Miner.jpg" title="Java Repository Miner" alt="Java Repository Miner"></a>
+<a href="https://github.com/farhour/Java-Repository-Miner" target="_blank"><img src="https://farhour.com/img/github/Java-Repository-Miner.jpg" title="Java Repository Miner" alt="Java Repository Miner"></a>
 
 # Coding Task 1 - Java Repository Miner
 
